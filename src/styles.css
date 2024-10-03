@@ -1,4 +1,164 @@
 /* You can add global styles to this file, and also import other style files */
 
+*,::after, ::before {
+    box-sizing: border-box;
+
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.card{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    max-height: 100vh;
+}
+
+
+.table {
+    margin-bottom: 10px !important;
+    font-size: 12px;
+}
+
+
+.custom-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100% !important  ;
+    margin-bottom: 15px;
+}
+
+
+
+.custom-table {
+    white-space: nowrap !important;
+    
+}
+
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+
+.custom-table thead th {
+    border: 1px solid #6eb4ff;
+    position: sticky;
+    top: -1px;
+    z-index: 3;
+    font-weight: 500;
+}
+
+.table thead th {
+    border: 1px solid #6eb4ff !important;
+    background: #235b97;
+    color: #fff;
+    text-align: center;
+    position: sticky;
+    top: -2px;
+    z-index: 10;
+}
+
+.table th, .table td {
+    white-space: nowrap;
+}
+
+.custom-table th {
+    background: #3798ff;
+    color: #fff;
+    white-space: nowrap;
+    padding: 2px 5px;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+
+.table th, .table td {
+    white-space: nowrap;
+}
+
+.custom-table td {
+    border: solid 1px #e2e2e2;
+    padding: -2px 5px;
+    font-size: 13px;
+}
+
+
+/* Popup Design */
+
+
+.pop-header {
+    width: 100%;
+    float: left;
+    font-size: 17px;
+    border-bottom: 1px solid #c8ced3;
+    font-weight: 700;
+    padding: 5px 10px;
+}
+
+.pop-content {
+    width: 100%;
+    float: left;
+    padding: 10px ;
+}
+
+.pop-footer {
+    width: 100%;
+    float: left;
+    padding: 5px 10px;
+    border-top: 1px solid #c8ced3;
+}
+
+
+.close-icon{
+    float: right;
+    color: red;
+    cursor: pointer;
+}
+
+/* Input */
+
+
+.form-control{
+    padding: 3px;
+}
+
+.form-control input{
+    width: 100%;
+    border: none;
+    outline: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.form-control textarea{
+    width: 100%;
+    border: none;
+    outline: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 4px;
+}

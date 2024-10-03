@@ -19,6 +19,10 @@ import { FoodListComponent } from './pages/food-list/food-list.component';
 import { MatListModule } from '@angular/material/list';
 import  { BodyComponent } from './body/body.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CoursesComponent } from './pages/courses/courses.component';
+import { MeterialsModule } from '../app/pages/meterials/meterials.module';
+import { PopupsModule } from './popups/popups.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -33,7 +37,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ChartpageComponent,
     TodayComponent,
     FoodListComponent,
-    BodyComponent
+    BodyComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RouterModule,
     NgApexchartsModule,
     FontAwesomeModule,
+    MeterialsModule,
+    PopupsModule,
+    HttpClientModule
+  
 
 
 

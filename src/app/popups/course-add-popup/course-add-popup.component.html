@@ -1,0 +1,43 @@
+
+    <div class="pop-header" >
+        <span class="title">
+            Course Add
+        </span>
+        <span class="close-icon">
+            <mat-icon  (click)="dialogRef.close()" >close</mat-icon>
+        </span>
+    </div>
+    
+    <div class="pop-content"  [formGroup]="itemForm" >
+    
+    
+    <div  class="form-control" >
+    <label for="">Name</label>
+    <input type="text">
+    </div>
+    
+    
+    <div  class="form-control" >
+    <label for="">Duration</label>
+    <input type="text">
+    </div>
+    
+    <div  class="form-control" >
+        <label for="">Fees</label>
+        <input type="text">
+        </div>
+    
+    
+    
+        <div  class="form-control" >
+            <label for="">Description</label>
+           <textarea name=""  rows="2" id=""></textarea>
+            </div>
+    
+    
+    </div>
+    
+    <div class="pop-footer">
+        <button  mat-raised-button color="primary"   >Save</button>
+    </div>
+    

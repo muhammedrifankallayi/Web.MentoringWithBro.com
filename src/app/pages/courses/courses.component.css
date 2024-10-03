@@ -1,0 +1,11 @@
+.top-content{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+   
+}
+
+.top-content button{
+    margin-right: 5px;
+    margin-bottom: 5px;
+}

@@ -12,13 +12,20 @@ export const navbarData = [
   {
     routeLink: 'food-list',
     icon: 'fa fa-list-ul',
-    label: 'food list'
+    label: 'Courses'
   },
   {
 
     routeLink: 'today',
     icon: ' fa fa-history',
-    label: 'Today'
+    label: 'Faculty'
+  },
+
+  {
+
+    routeLink: 'courses',
+    icon: ' fa fa-users',
+    label: 'courses'
   },
 
 
