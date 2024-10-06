@@ -5,18 +5,18 @@ export const navbarData = [
   //     label: 'Dashboard'
   // },
   {
-    routeLink: 'chart',
+    routeLink: 'user-list',
     icon: 'fa fa-pie-chart',
-    label: 'Chart'
+    label: 'Users'
   },
   {
-    routeLink: 'food-list',
+    routeLink: 'student-list',
     icon: 'fa fa-list-ul',
-    label: 'Courses'
+    label: 'Students'
   },
   {
 
-    routeLink: 'today',
+    routeLink: 'faculty',
     icon: ' fa fa-history',
     label: 'Faculty'
   },
@@ -25,8 +25,15 @@ export const navbarData = [
 
     routeLink: 'courses',
     icon: ' fa fa-users',
-    label: 'courses'
+    label: 'Courses'
   },
 
+
+  {
+
+    routeLink: 'student-week',
+    icon: ' fa fa-star',
+    label: 'Student Week'
+  },
 
 ];

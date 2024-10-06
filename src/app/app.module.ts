@@ -23,6 +23,10 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { MeterialsModule } from '../app/pages/meterials/meterials.module';
 import { PopupsModule } from './popups/popups.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FacultyComponent } from './pages/faculty/faculty.component';
+import { StudentListComponent } from './pages/student-list/student-list.component';
+import { UserListComponent } from './pages/user-list/user-list.component';
+import { StudentWeeksComponent } from './pages/student-weeks/student-weeks.component';
 
 
 
@@ -38,7 +42,11 @@ import { HttpClientModule } from '@angular/common/http';
     TodayComponent,
     FoodListComponent,
     BodyComponent,
-    CoursesComponent
+    CoursesComponent,
+    FacultyComponent,
+    StudentListComponent,
+    UserListComponent,
+    StudentWeeksComponent
   ],
   imports: [
     BrowserModule,

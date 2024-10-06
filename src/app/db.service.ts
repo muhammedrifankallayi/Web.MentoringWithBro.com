@@ -1,15 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
+
+const rootURL = "http://localhost:3000/";
+
+
 @Injectable({
   providedIn: 'root'
 })
 
-const rootURL = "http://localhost:3000/"
+
 
 export class DbService {
-
-
 
   constructor(private http:HttpClient) { }
 

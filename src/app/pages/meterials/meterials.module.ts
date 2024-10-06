@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,7 +12,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 const Modules = [
   MatButtonModule,
   MatIconModule,
-  MatDialogModule
+  MatDialogModule,
+  ReactiveFormsModule,
+  MatCheckboxModule
+  
 ]
 
 

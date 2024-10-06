@@ -145,7 +145,7 @@ tbody {
     padding: 3px;
 }
 
-.form-control input{
+.form-control input,select{
     width: 100%;
     border: none;
     outline: none;

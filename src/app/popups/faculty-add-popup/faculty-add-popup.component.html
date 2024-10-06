@@ -1,0 +1,48 @@
+
+<div class="pop-header" >
+    <span class="title"  >
+        Faculty Add
+    </span>
+    <span class="close-icon">
+        <mat-icon  (click)="dialogRef.close()" >close</mat-icon>
+    </span>
+</div>
+
+<div class="pop-content"  [formGroup]="itemForm" >
+
+
+<div  class="form-control" >
+<label for="">Name</label>
+<input type="text"  formControlName="Name" >
+</div>
+
+
+<div  class="form-control" >
+<label for="">Domain</label>
+<input type="text" formControlName="Domain">
+</div>
+
+<div  class="form-control" >
+    <label for="">Qualification</label>
+    <input type="text" formControlName="Qualification">
+    </div>
+
+
+
+    <div  class="form-control" >
+        <label for="">Salary</label>
+      <input type="number" formControlName="Salary">
+        </div>
+
+        <div  class="form-control" >
+            <label for="">Join Date</label>
+          <input type="date" formControlName="JoinDate">
+            </div>
+
+
+</div>
+
+<div class="pop-footer">
+    <button  mat-raised-button color="primary"   >Save</button>
+</div>
+

@@ -1,0 +1,29 @@
+<div class="pop-header" >
+    <span>
+        Week Details
+    </span>
+
+    <span class="close-icon" >
+<mat-icon  (click)="dialogRef.close()" >close</mat-icon>
+    </span>
+</div>
+
+<div class="pop-content">
+
+<table class="custom-table table">
+    <thead>
+        <tr>
+            <th>Week</th>
+            <th  style="width: 400px;" >Remarks</th>
+            <th>Point</th>
+        </tr>
+    </thead>
+<tbody  class="data-sets" >
+    <td>week 1</td>
+    <td  >have to improve in typing quickly</td>
+    <td> 5.5/10</td>
+    <td style="display: flex; justify-content: center;cursor: pointer;color: green;" (click)="openAddWeekDetail()" > <span><mat-icon>add</mat-icon></span> </td>
+</tbody>
+</table>
+
+</div>
