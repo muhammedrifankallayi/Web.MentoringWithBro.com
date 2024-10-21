@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 
 
-const rootURL = "http://localhost:3000/";
+const rootURL = "http://localhost:3000/api/Admin";
 
 
 @Injectable({
@@ -22,7 +22,7 @@ return this.http.get(rootURL+url);
 }
 
 methodPost(url:string,data:any){
-  return this.http.post(rootURL+url,data);
+  return this.http.post(`${rootURL}/${url}`,data);
 }
 
 

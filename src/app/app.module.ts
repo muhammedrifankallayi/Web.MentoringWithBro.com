@@ -27,6 +27,7 @@ import { FacultyComponent } from './pages/faculty/faculty.component';
 import { StudentListComponent } from './pages/student-list/student-list.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { StudentWeeksComponent } from './pages/student-weeks/student-weeks.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 
@@ -46,7 +47,8 @@ import { StudentWeeksComponent } from './pages/student-weeks/student-weeks.compo
     FacultyComponent,
     StudentListComponent,
     UserListComponent,
-    StudentWeeksComponent
+    StudentWeeksComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -61,8 +63,8 @@ import { StudentWeeksComponent } from './pages/student-weeks/student-weeks.compo
     FontAwesomeModule,
     MeterialsModule,
     PopupsModule,
-    HttpClientModule
-  
+    HttpClientModule,
+    
 
 
 

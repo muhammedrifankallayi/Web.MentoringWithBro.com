@@ -4,7 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -14,7 +16,10 @@ const Modules = [
   MatIconModule,
   MatDialogModule,
   ReactiveFormsModule,
-  MatCheckboxModule
+  FormsModule,
+  MatCheckboxModule,
+  MatMenuModule,
+  MatSnackBarModule
   
 ]
 

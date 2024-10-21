@@ -11,14 +11,24 @@ import { FacultyComponent } from './pages/faculty/faculty.component';
 import { StudentListComponent } from './pages/student-list/student-list.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { StudentWeeksComponent } from './pages/student-weeks/student-weeks.component';
+import { LoginComponent } from './pages/login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'chart', component: ChartpageComponent },
-  { path: 'user-list', component: UserListComponent },
-  { path: 'student-list', component: StudentListComponent },
-  { path:"courses",component:CoursesComponent},
-  { path:"faculty",component:FacultyComponent},
-  { path:"student-week",component:StudentWeeksComponent},
+
+{path:"",component:DashboardComponent,
+  children:[
+    { path: 'chart', component: ChartpageComponent },
+    { path: 'user-list', component: UserListComponent },
+    { path: 'student-list', component: StudentListComponent },
+    { path:"courses",component:CoursesComponent},
+    { path:"faculty",component:FacultyComponent},
+    { path:"student-week",component:StudentWeeksComponent}
+  ]
+},
+
+  
+  {path:"login",component:LoginComponent}
 ];
 
 @NgModule({

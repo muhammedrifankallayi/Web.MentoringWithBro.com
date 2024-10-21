@@ -3,13 +3,19 @@
 <mat-toolbar class="mainheader">
   <mat-toolbar-row>
 
-    <img src="assets/foodlogo.png" alt="My App Logo" style="width: 40px; height: 40px;" />
+    <!-- <img src="assets/foodlogo.png" alt="My App Logo" style="width: 40px; height: 40px;" /> -->
+    <!-- <mat-icon>card_travel</mat-icon> -->
 
- <p class="brandname"> Your Mentor Bro</p>
+ <p class="brandname"> @ Your Mentor Bro</p>
  <div class="spacer">
 
   </div>
   
-  <p class="time">{{ currentTime }}</p>
+ 
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item> <p class="time">{{ currentTime }}</p></button>
+  <button mat-menu-item>Logout</button>
+</mat-menu>
   </mat-toolbar-row>
   </mat-toolbar>

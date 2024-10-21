@@ -7,6 +7,7 @@
         <thead>
             <tr>
                 <th>No</th>
+                <th>UserName</th>
                 <th>Email</th>
                 <th>Join Date</th>
                 <th  class="isStudent" >Student</th>
@@ -15,12 +16,27 @@
             </tr>
         </thead>
         <tbody>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr  *ngFor="let lst of userList;let i = index" >
+        <td> {{i+1}} </td>
+        <td> {{lst?.username}} </td>
+        <td> {{lst?.email}} </td>
+        <td> {{lst?.createdAt | date:date_format}}</td>
+        <td>
+            <mat-checkbox  *ngIf="lst.isStudent" [checked]="true"></mat-checkbox>
+            <mat-checkbox *ngIf="!lst.isStudent" [checked]="false"></mat-checkbox>
+
+        </td>
+        <td  >
+            <mat-icon>
+                edit
+            </mat-icon>
+            <mat-icon>
+                delete
+            </mat-icon>
+            <mat-icon>
+                update
+            </mat-icon>
+        </td>
     </tr>
     
         </tbody>
