@@ -3,9 +3,10 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable, finalize } from 'rxjs';
+import { Observable, catchError, finalize, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { DbService } from 'src/app/db.service';
 
@@ -17,25 +18,32 @@ export class InterceptorInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-
-
 const token = localStorage.getItem("adminToken");
 
-
-
-
-
  if (token) {
-  
 const newReq = request.clone({
   headers:request.headers.set('Authorization','Bearer '+token )
 })
 
-return next.handle(newReq)
+return next.handle(newReq).
+pipe(
+  catchError((error: HttpErrorResponse) => {
+    if (error.status === 401 || error.status === 403) { 
+      this.route.navigate(['/login']);
+    }
+    return throwError(error); 
+  })
+);
 }
 
-return next.handle(request);
-
+return next.handle(request).pipe(
+  catchError((error: HttpErrorResponse) => {
+    if (error.status === 401 || error.status === 403) { 
+      this.route.navigate(['/login']);
+    }
+    return throwError(error); 
+  })
+);
 
 
   }

@@ -22,12 +22,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { MeterialsModule } from '../app/pages/meterials/meterials.module';
 import { PopupsModule } from './popups/popups.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FacultyComponent } from './pages/faculty/faculty.component';
 import { StudentListComponent } from './pages/student-list/student-list.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { StudentWeeksComponent } from './pages/student-weeks/student-weeks.component';
 import { LoginComponent } from './pages/login/login.component';
+import { InterceptorInterceptor } from './pages/services/interceptor.service';
 
 
 
@@ -69,7 +70,13 @@ import { LoginComponent } from './pages/login/login.component';
 
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorInterceptor,
+      multi: true  
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
