@@ -1,0 +1,11 @@
+.pop-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pop-header mat-icon{
+    color: red;
+    cursor: pointer;
+}

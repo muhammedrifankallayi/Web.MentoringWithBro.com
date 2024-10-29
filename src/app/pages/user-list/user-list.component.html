@@ -22,20 +22,24 @@
         <td> {{lst?.email}} </td>
         <td> {{lst?.createdAt | date:date_format}}</td>
         <td>
+          <div class="al-center"  style="display: flex;justify-content: center;width: 100%;" >
             <mat-checkbox  *ngIf="lst.isStudent" [checked]="true"></mat-checkbox>
             <mat-checkbox *ngIf="!lst.isStudent" [checked]="false"></mat-checkbox>
+          </div>
 
         </td>
-        <td  >
-            <mat-icon>
+        <td class="al-center" >
+           <div>
+            <mat-icon  class="edit" >
                 edit
             </mat-icon>
-            <mat-icon>
+            <mat-icon  class="delete" >
                 delete
             </mat-icon>
-            <mat-icon>
+            <mat-icon  class="update" (click)="updateToStudentPopup(lst?._id)" >
                 update
             </mat-icon>
+           </div>
         </td>
     </tr>
     

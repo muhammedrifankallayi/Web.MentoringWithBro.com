@@ -11,21 +11,24 @@
                 <th>Duration</th>
                 <th>Fees</th>
                 <th>Description</th>
-                <th>Publish</th>
                 <th>Action</th>
                 
             </tr>
         </thead>
         <tbody>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    
+            <tr  *ngFor="let lst of searchList;let i = index" >
+                <td> {{i+1}} </td>
+                <td> {{lst?.username}} </td>
+                <td> {{lst?.email}} </td>
+                <td> {{lst?.createdAt | date:date_format}}</td>
+                <td class="al-center" >
+                   <div>
+                    <mat-icon  class="edit" >
+                        edit
+                    </mat-icon>
+                   </div>
+                </td>
+            </tr>
         </tbody>
     </table>
     

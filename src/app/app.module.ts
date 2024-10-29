@@ -14,8 +14,6 @@ import { ChartpageComponent } from './pages/chart/chart.component';
 import { NgApexchartsModule } from "ng-apexcharts";
 import {RouterModule} from '@angular/router';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { TodayComponent } from './pages/today/today.component';
-import { FoodListComponent } from './pages/food-list/food-list.component';
 import { MatListModule } from '@angular/material/list';
 import  { BodyComponent } from './body/body.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -29,6 +27,7 @@ import { UserListComponent } from './pages/user-list/user-list.component';
 import { StudentWeeksComponent } from './pages/student-weeks/student-weeks.component';
 import { LoginComponent } from './pages/login/login.component';
 import { InterceptorInterceptor } from './pages/services/interceptor.service';
+import { BatchListComponent } from './pages/batch-list/batch-list.component';
 
 
 
@@ -41,15 +40,14 @@ import { InterceptorInterceptor } from './pages/services/interceptor.service';
     FooterComponent,
     SidebarComponent,
     ChartpageComponent,
-    TodayComponent,
-    FoodListComponent,
     BodyComponent,
     CoursesComponent,
     FacultyComponent,
     StudentListComponent,
     UserListComponent,
     StudentWeeksComponent,
-    LoginComponent
+    LoginComponent,
+    BatchListComponent
   ],
   imports: [
     BrowserModule,

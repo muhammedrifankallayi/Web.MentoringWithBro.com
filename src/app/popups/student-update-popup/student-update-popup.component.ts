@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DbService } from 'src/app/db.service';
 
@@ -16,7 +17,9 @@ itemForm!:FormGroup
 constructor(
   private fb:FormBuilder,
   private snack:MatSnackBar,
-  private dbservice:DbService
+  private dbservice:DbService,
+  @Inject(MAT_DIALOG_DATA) public data:any,
+  public dialogRef:MatDialogRef<StudentUpdatePopupComponent>
 ){}
 
 ngOnInit(): void {
@@ -26,7 +29,8 @@ ngOnInit(): void {
 buildForm(){
   this.itemForm = this.fb.group({
     batchNo:[""],
-    course:['']
+    course:[''],
+    _id:[this.data?._id]
   })
 }
 
@@ -36,6 +40,7 @@ submit(){
   .subscribe((data:any)=>{
     if(data.success==true){
       this.snack.open("student updated successfull","OK",{duration:3000});
+      this.dialogRef.close(1)
     }
   })
 }

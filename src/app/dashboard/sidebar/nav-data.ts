@@ -36,4 +36,11 @@ export const navbarData = [
     label: 'Student Week'
   },
 
+  {
+
+    routeLink: 'batch-list',
+    icon: ' fa fa-star',
+    label: 'Batch List'
+  },
+
 ];
