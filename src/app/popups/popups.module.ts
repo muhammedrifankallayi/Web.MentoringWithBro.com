@@ -7,6 +7,7 @@ import { StudentAddPopupComponent } from './student-add-popup/student-add-popup.
 import { WeekDetailsPopupComponent } from './week-details-popup/week-details-popup.component';
 import { AddWeekDetailPopupComponent } from './add-week-detail-popup/add-week-detail-popup.component';
 import { StudentUpdatePopupComponent } from './student-update-popup/student-update-popup.component';
+import { AddBatchPopupComponent } from './add-batch-popup/add-batch-popup.component';
 
 
 
@@ -17,7 +18,8 @@ import { StudentUpdatePopupComponent } from './student-update-popup/student-upda
     StudentAddPopupComponent,
     WeekDetailsPopupComponent,
     AddWeekDetailPopupComponent,
-    StudentUpdatePopupComponent
+    StudentUpdatePopupComponent,
+    AddBatchPopupComponent
   ],
   imports: [
     CommonModule,

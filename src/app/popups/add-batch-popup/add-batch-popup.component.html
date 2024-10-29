@@ -1,0 +1,41 @@
+
+<div class="pop-header" >
+    <span class="title"  >
+        Batch Add
+    </span>
+    <span class="close-icon">
+        <mat-icon  (click)="dialogRef.close()" >close</mat-icon>
+    </span>
+</div>
+
+<div class="pop-content"  [formGroup]="itemForm" >
+
+
+<div  class="form-control" >
+<label for="">Batch No</label>
+<input type="text"  formControlName="batchNo" >
+</div>
+
+
+<div  class="form-control" >
+<label for="">Maximum Students</label>
+<input type="text" formControlName="noOfStudents">
+</div>
+
+<div  class="form-control" >
+    <label for="">Start date</label>
+    <input type="text" formControlName="startDate">
+    </div>
+
+
+    <div  class="form-control" >
+        <label for="">Duration</label>
+        <input type="number" formControlName="duration"  title="duration in month" >
+    </div>
+
+</div>
+
+<div class="pop-footer">
+    <button  mat-raised-button color="primary" (click)="submit()"  >Save</button>
+</div>
+

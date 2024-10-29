@@ -2,22 +2,31 @@
 <div  style="width: 100%;" >
     <div class="top-content" >
         <h2>Batch List</h2>
+        <button mat-raised-button  color="primary" (click)="addBatch()" >Add new Batch</button>
     </div>
     <table class="custom-table table">
         <thead>
             <tr>
                 <th>No</th>
                 <th>Batch No</th>
+                <th>No of Students</th>
                 <th>Start date</th>
                 <th>Duration</th>
                 <th>Current Status</th>
-                <th>Number of Students</th>
+                <th>Close</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                
+            <tr *ngFor="let item of searchList;let i = index" >
+<td>{{i+1}} </td>
+<td> {{item.batchNo}} </td>
+<td> {{item.noOfStudents}} </td>
+<td> {{item.startDate}} </td>
+<td> {{item.duration}} </td>
+<td> {{item.currentStatus}} </td>
+<td> {{item.isClosed}} </td>
+<td></td>
             </tr>
         </tbody>
         

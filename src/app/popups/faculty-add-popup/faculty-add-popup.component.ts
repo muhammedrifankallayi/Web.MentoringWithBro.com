@@ -26,7 +26,8 @@ this.itemForm = this.fb.group({
   Domain:[''],
   Qualification:[""],
   Salary:[""],
-  JoinDate:[""]
+  JoinDate:[""],
+
 
 })
 }
