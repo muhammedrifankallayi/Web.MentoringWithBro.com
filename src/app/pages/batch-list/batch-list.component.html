@@ -22,11 +22,14 @@
 <td>{{i+1}} </td>
 <td> {{item.batchNo}} </td>
 <td> {{item.noOfStudents}} </td>
-<td> {{item.startDate}} </td>
+<td> {{item.startDate | date : date_format}} </td>
 <td> {{item.duration}} </td>
 <td> {{item.currentStatus}} </td>
 <td> {{item.isClosed}} </td>
-<td></td>
+<td>  
+<mat-icon>close</mat-icon>
+<mat-icon>update</mat-icon>
+</td>
             </tr>
         </tbody>
         

@@ -16,6 +16,11 @@
 <input type="text"  formControlName="Name" >
 </div>
 
+<div  class="form-control" >
+    <label for="">User Name</label>
+    <input type="text"  formControlName="UserName" >
+    </div>
+
 
 <div  class="form-control" >
 <label for="">Address</label>
@@ -31,12 +36,18 @@
 
     <div  class="form-control" >
         <label for="">Course</label>
-     <select name="" id="">
+     <select name="" id="" formControlName="Course" >
         <option value="1">MEarn</option>
         <option value="1">Python</option>
         <option value="1">Java</option>
      </select>
-        </div>
+    </div>
+    <div  class="form-control" >
+        <label for="">Batch</label>
+     <select name="" id=""  formControlName="batch">
+        <option *ngFor="let item of batchList"  [value]="item._id"> {{item.batchNo}} </option>
+     </select>
+    </div>
 
         <div  class="form-control" >
             <label for="">Course Join Date</label>

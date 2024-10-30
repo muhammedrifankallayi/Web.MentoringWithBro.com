@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+
 import { DbService } from 'src/app/db.service';
 import { AddBatchPopupComponent } from 'src/app/popups/add-batch-popup/add-batch-popup.component';
+import { Config } from 'src/app/shared/config';
 
 @Component({
   selector: 'app-batch-list',
@@ -13,6 +15,8 @@ export class BatchListComponent implements OnInit {
 
 searchList:any[] = []
 resultList :any[] = []
+
+date_format = Config.dateformat
 
 ngOnInit(): void {
   this.getAllBatches()
@@ -43,9 +47,9 @@ constructor(
 
 
 getAllBatches(){
-  this.dbservice.methodGet("getAllBatch").subscribe((data:any)=>{
-    this.resultList = data;
-    this.searchList = data ;
+  this.dbservice.methodGet("/getAllBatch").subscribe((data:any)=>{
+    this.resultList = data.data;
+    this.searchList = data.data ;
   })
 }
 

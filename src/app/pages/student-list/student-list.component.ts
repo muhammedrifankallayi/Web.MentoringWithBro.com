@@ -20,7 +20,7 @@ private dbservice:DbService
 ){}
 
 ngOnInit(): void {
-  this.getAllStudents();
+  // this.getAllStudents();
 }
 
 

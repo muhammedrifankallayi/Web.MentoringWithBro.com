@@ -29,11 +29,12 @@ ngOnInit(): void {
 
 buildForm(){
   this.itemForm = this.fb.group({
+    batch:[0],
     batchNo:[""],
     noOfStudents:[''],
-    startDate:[''],
-    currentStatus:[''],
-    duration:['']
+    startDate:[new Date],
+    currentStatus:['Pending'],
+    duration:[0]
   })
 }
 
@@ -41,8 +42,9 @@ buildForm(){
 getNextBatchNo(){
   this.dbservice.methodGet("/getNextBatchNo").subscribe((res:any)=>{
     if(res){
+      this.itemForm.get("batch")?.setValue(res.data)
       this.itemForm.get("batchNo")?.setValue(res.data)
-      this.itemForm.get("batchNo")?.disable()
+      this.itemForm.controls['batch'].disable()
     }
   })
 }
@@ -56,8 +58,8 @@ submit(){
   }
 
   this.dbservice.methodPost("addBatch",this.itemForm.value)
-.subscribe(res=>{
-  if(res==1){
+.subscribe((res:any)=>{
+  if(res.success==true){
    this.snack.open("saved successfull","OK",{duration:3000})
    this.dialogRef.close(1);
   }
