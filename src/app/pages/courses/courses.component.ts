@@ -15,6 +15,10 @@ constructor(
 ){}
 
 
+getAllCourses(){
+  
+}
+
 openCourseAddPopup(){
   this.dialog.open(
     CourseAddPopupComponent,
@@ -22,7 +26,11 @@ openCourseAddPopup(){
       disableClose:true,
       width:"600px"
     }
-  )
+  ).afterClosed().subscribe((res)=>{
+    if(res==1){
+
+    }
+  })
 }
 
 

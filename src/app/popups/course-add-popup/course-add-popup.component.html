@@ -13,31 +13,38 @@
     
     <div  class="form-control" >
     <label for="">Name</label>
-    <input type="text">
+    <input type="text"   formControlName="course" >
     </div>
     
     
     <div  class="form-control" >
     <label for="">Duration</label>
-    <input type="text">
+    <input type="text" formControlName="duration" >
     </div>
     
     <div  class="form-control" >
         <label for="">Fees</label>
-        <input type="text">
+        <input type="text" formControlName="fees" >
         </div>
+
+        <div  class="form-control" >
+            <label for="">Fees</label>
+            <select name="" formControlName="payType">
+                <option  *ngFor="let item of payTypeList" [value]="item.value"> {{item.name}} </option>
+            </select>
+            </div>
     
     
     
         <div  class="form-control" >
             <label for="">Description</label>
-           <textarea name=""  rows="2" id=""></textarea>
+           <textarea formControlName="description"  rows="2" id=""></textarea>
             </div>
     
     
     </div>
     
     <div class="pop-footer">
-        <button  mat-raised-button color="primary"   >Save</button>
+        <button  (click)="submit()"  mat-raised-button color="primary"   >Save</button>
     </div>
     
