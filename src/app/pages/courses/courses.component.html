@@ -17,13 +17,19 @@
         </tr>
     </thead>
     <tbody>
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+<tr *ngFor="let lst of searchList">
+    <td>  {{lst?.course}} </td>
+    <td> {{lst?.duration}} </td>
+    <td> {{lst?.fees}} </td>
+    <td> {{lst?.description}} </td>
+    <td> {{lst?.isPublished}} </td>
+    <td  >  
+        <div  class="action" >
+            <mat-icon class="update" >update</mat-icon>
+            <mat-icon  class="block" >block</mat-icon>
+        </div>
+      
+    </td>
 </tr>
 
     </tbody>

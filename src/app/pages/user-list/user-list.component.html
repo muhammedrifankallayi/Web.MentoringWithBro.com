@@ -1,16 +1,15 @@
 
 <div  style="width: 100%;" >
     <div class="top-content" >
-        <h2>User List</h2>
+        <h2>Enquiry List</h2>
     </div>
     <table class="custom-table table">
         <thead>
             <tr>
                 <th>No</th>
-                <th>UserName</th>
-                <th>Email</th>
-                <th>Join Date</th>
-                <th  class="isStudent" >Student</th>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Date</th>
                 <th>Action</th>
                 
             </tr>
@@ -18,27 +17,16 @@
         <tbody>
     <tr  *ngFor="let lst of userList;let i = index" >
         <td> {{i+1}} </td>
-        <td> {{lst?.username}} </td>
-        <td> {{lst?.email}} </td>
+        <td> {{lst?.name}} </td>
+        <td> {{lst?.mobile}} </td>
         <td> {{lst?.createdAt | date:date_format}}</td>
-        <td>
-          <div class="al-center"  style="display: flex;justify-content: center;width: 100%;" >
-            <mat-checkbox  *ngIf="lst.isStudent" [checked]="true"></mat-checkbox>
-            <mat-checkbox *ngIf="!lst.isStudent" [checked]="false"></mat-checkbox>
-          </div>
 
-        </td>
         <td class="al-center" >
            <div>
-            <mat-icon  class="edit" >
-                edit
-            </mat-icon>
-            <mat-icon  class="delete" >
-                delete
-            </mat-icon>
-            <mat-icon  class="update" (click)="updateToStudentPopup(lst?._id)" >
+            <mat-icon *ngIf="lst.completed==0" class="update" (click)="openUpdate(lst)"  title="close" >
                 update
             </mat-icon>
+            <mat-icon   *ngIf="lst.completed==1"  class="done"  style="color: green;" >check</mat-icon>
            </div>
         </td>
     </tr>

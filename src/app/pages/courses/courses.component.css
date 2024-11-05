@@ -9,3 +9,18 @@
     margin-bottom: 5px;
 }
 
+.action{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.update{
+    color: blue;
+    cursor: pointer;
+}
+.block{
+    color: red;
+    cursor: pointer;
+}

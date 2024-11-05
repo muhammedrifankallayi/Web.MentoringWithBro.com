@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -9,7 +9,7 @@ import { DbService } from 'src/app/db.service';
   templateUrl: './course-add-popup.component.html',
   styleUrls: ['./course-add-popup.component.css']
 })
-export class CourseAddPopupComponent {
+export class CourseAddPopupComponent implements OnInit {
 
 
   itemForm!:FormGroup
@@ -29,7 +29,10 @@ constructor(
   private snack:MatSnackBar
 
 ){
+}
 
+ngOnInit(): void {
+  this.builForm()
 }
 
 builForm(){

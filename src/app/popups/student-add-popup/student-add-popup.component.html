@@ -37,9 +37,8 @@
     <div  class="form-control" >
         <label for="">Course</label>
      <select name="" id="" formControlName="Course" >
-        <option value="1">MEarn</option>
-        <option value="1">Python</option>
-        <option value="1">Java</option>
+        <option    *ngFor="let item of courseList" [value]="item._id"> {{item.course}} </option>
+       
      </select>
     </div>
     <div  class="form-control" >
@@ -53,6 +52,13 @@
             <label for="">Course Join Date</label>
           <input type="date" formControlName="CourseJoinDate">
             </div>
+
+            <div  class="form-control" >
+                <label for="">temparory password</label>
+              <input type="text" formControlName="CourseJoinDate">
+            </div>
+
+
 
 
 </div>

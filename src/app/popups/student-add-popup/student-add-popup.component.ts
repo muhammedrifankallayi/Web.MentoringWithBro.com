@@ -14,6 +14,7 @@ export class StudentAddPopupComponent  implements OnInit{
 itemForm!:FormGroup;
 
 batchList:any[] = []
+courseList:any[] = []
 
 constructor(
 public dialogRef:MatDialogRef<StudentAddPopupComponent>,
@@ -26,6 +27,7 @@ private fb:FormBuilder
 ngOnInit(): void {
   this.buildform()
   this.getAllBatch()
+  this.getAllCourseList()
 }
 
 buildform(){
@@ -45,8 +47,14 @@ buildform(){
 getAllBatch(){
   this.dbservice.methodGet("/getAllBatch").subscribe((data:any)=>{
 this.batchList = data.data
-console.log(data.data);
 
+
+  })
+}
+
+getAllCourseList(){
+  this.dbservice.methodGet("/getAllCourseList").subscribe((data:any)=>{
+this.courseList = data.data
   })
 }
 
