@@ -22,7 +22,7 @@ return this.http.get(rootURL+url);
 }
 
 methodPost(url:string,data:any){
-  return this.http.post(`${rootURL}/${url}`,data);
+  return this.http.post(`${rootURL}${url}`,data);
 }
 
 

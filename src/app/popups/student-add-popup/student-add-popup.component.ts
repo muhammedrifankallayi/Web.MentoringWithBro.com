@@ -16,6 +16,16 @@ itemForm!:FormGroup;
 batchList:any[] = []
 courseList:any[] = []
 
+
+educationList = [
+  {name:"High School"},
+  {name:"Higher Secondary"},
+  {name:"Graduation"},
+  {name:"Post Graduation"},
+  
+]
+
+
 constructor(
 public dialogRef:MatDialogRef<StudentAddPopupComponent>,
 private dbservice:DbService,
@@ -32,14 +42,15 @@ ngOnInit(): void {
 
 buildform(){
   this.itemForm = this.fb.group({
-     Name:[""],
-     UserName:[''],
-     Address:[""],
-     Mobile:[""],
-     Course:[""],
-     Qualification:[""],
-     CourseJoinDate:[""],
-     batch:[""]
+     name:[""],
+     username:[''],
+     password:[''],
+     address:[""],
+     mobile:[""],
+     courseId:[""],
+     joinDate:[""],
+     batchId:[""],
+     education:['']
 
   })
 }
@@ -61,12 +72,14 @@ this.courseList = data.data
 
 submit(){
   if(this.itemForm.valid){
-    this.dbservice.methodPost("admin/saveStudent",this.itemForm.value)
+    this.dbservice.methodPost("/saveStudent",this.itemForm.value)
     .subscribe((res)=>{
       if(res==1){
         alert("Saved Successfull ! ")
       }
     })
+  }else{
+    alert("Invali from");
   }
 }
 

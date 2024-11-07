@@ -28,7 +28,8 @@ openAddStudent(){
   this.dialog.open(
     StudentAddPopupComponent,
     {
-      disableClose:true
+      disableClose:true,
+      width:"600px"
     }
   )
 }
