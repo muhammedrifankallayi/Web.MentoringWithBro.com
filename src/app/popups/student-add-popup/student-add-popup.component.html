@@ -4,7 +4,7 @@
         Student Add
     </span>
     <span class="close-icon">
-        <mat-icon  (click)="dialogRef.close()" >add</mat-icon>
+        <mat-icon  (click)="dialogRef.close()" >close</mat-icon>
     </span>
 </div>
 
@@ -64,6 +64,9 @@
 </div>
 
 <div class="pop-footer">
-    <button  mat-raised-button color="primary" (click)="submit()"  >Save</button>
+    <button  mat-raised-button color="primary" (click)="submit()"  >
+        <span *ngIf="!updateMode" >Save</span>
+        <span *ngIf="updateMode" >Update</span>
+    </button>
 </div>
 

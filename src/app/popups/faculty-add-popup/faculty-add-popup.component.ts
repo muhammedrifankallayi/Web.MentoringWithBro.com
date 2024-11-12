@@ -18,15 +18,17 @@ constructor(
   public dialogRef:MatDialogRef<FacultyAddPopupComponent>,
   private fb:FormBuilder,
   private dbservice:DbService
-){}
+){
+  this.buildForm()
+}
 
 buildForm(){
 this.itemForm = this.fb.group({
-  Name:[''],
-  Domain:[''],
-  Qualification:[""],
-  Salary:[""],
-  JoinDate:[""],
+  name:[''],
+  domain:[''],
+  qualification:[""],
+  salary:[""],
+  join_date:[""],
 
 
 })
@@ -36,7 +38,7 @@ this.itemForm = this.fb.group({
 
 submit(){
   if(this.itemForm.valid){
-   this.dbservice.methodPost("admin/saveFaculty",this.itemForm.value).subscribe((res:any)=>{
+   this.dbservice.methodPost("/saveFaculty",this.itemForm.value).subscribe((res:any)=>{
     if(res==1){
       alert("Data saved Successfull")
     }

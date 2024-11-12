@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DbService } from 'src/app/db.service';
 
 @Component({
@@ -16,6 +16,8 @@ itemForm!:FormGroup;
 batchList:any[] = []
 courseList:any[] = []
 
+updateMode:Boolean = false ;
+
 
 educationList = [
   {name:"High School"},
@@ -29,7 +31,8 @@ educationList = [
 constructor(
 public dialogRef:MatDialogRef<StudentAddPopupComponent>,
 private dbservice:DbService,
-private fb:FormBuilder
+private fb:FormBuilder,
+@Inject(MAT_DIALOG_DATA) public data:any
 ){
  
 }
@@ -38,6 +41,11 @@ ngOnInit(): void {
   this.buildform()
   this.getAllBatch()
   this.getAllCourseList()
+if(this.data.tp==1){
+  this.itemForm.patchValue(this.data.list)
+  this.updateMode = true ;
+}
+
 }
 
 buildform(){
@@ -79,7 +87,20 @@ submit(){
       }
     })
   }else{
-    alert("Invali from");
+    alert("Invalid form");
+  }
+}
+
+updateStudent(){
+  if(this.itemForm.valid){
+    this.dbservice.methodPost("/updateStudent",this.itemForm.value)
+    .subscribe((res)=>{
+      if(res==1){
+        alert("Update Successfull ! ")
+      }
+    })
+  }else{
+    alert("Invalid form");
   }
 }
 

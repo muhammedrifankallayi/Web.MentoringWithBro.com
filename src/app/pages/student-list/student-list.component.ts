@@ -20,16 +20,20 @@ private dbservice:DbService
 ){}
 
 ngOnInit(): void {
-  // this.getAllStudents();
+  this.getAllStudents();  
 }
 
 
-openAddStudent(){
+openAddStudent(list:any,tp=0){
   this.dialog.open(
     StudentAddPopupComponent,
     {
       disableClose:true,
-      width:"600px"
+      width:"600px",
+      data:{
+        tp,
+        list
+      }
     }
   )
 }
@@ -37,8 +41,8 @@ openAddStudent(){
 
 getAllStudents(){
   this.dbservice.methodGet("/getAllStudents").subscribe((data:any)=>{
-            this.searchList = data ;
-            this.resultList = data ;
+            this.searchList = data.data ;
+            this.resultList = data.data ;
 
   })
 }

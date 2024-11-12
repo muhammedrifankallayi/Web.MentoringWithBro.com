@@ -11,6 +11,7 @@ import { AddBatchPopupComponent } from './add-batch-popup/add-batch-popup.compon
 
 
 
+
 @NgModule({
   declarations: [
     CourseAddPopupComponent,
@@ -23,7 +24,7 @@ import { AddBatchPopupComponent } from './add-batch-popup/add-batch-popup.compon
   ],
   imports: [
     CommonModule,
-    MeterialsModule
+    MeterialsModule,
   ]
 })
 export class PopupsModule { }

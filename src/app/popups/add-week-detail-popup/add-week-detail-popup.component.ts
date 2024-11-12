@@ -12,4 +12,11 @@ constructor(
   public dialogRef:MatDialogRef<AddWeekDetailPopupComponent>
 ){}
 
+
+
+
+buildForm(){
+  
+}
+
 }

@@ -2,3 +2,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+.center{
+    text-align: center;
+}
+
+.al-center{
+    div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
