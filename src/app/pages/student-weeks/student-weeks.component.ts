@@ -42,14 +42,17 @@ this.dialog.open(
 
 getStudentTaskPerfList(userId:any){
 
-this.dbservice.methodGet("/getTaskPerformanceListByUser")
+this.dbservice.methodGet("/getTaskPerformanceListByUser?id="+userId)
 .subscribe((res:any)=>{
   if(res.success&&res.data.length>0){
    this.openWeekDetails(res.data);
   }else{
     this.dialog.open(AddWeekDetailPopupComponent,{
       disableClose:true,
-      width:"400px"
+      width:"400px",
+      data:{
+        userId
+      }
     })
   }
 })

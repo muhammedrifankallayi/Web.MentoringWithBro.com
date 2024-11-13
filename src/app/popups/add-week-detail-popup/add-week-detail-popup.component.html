@@ -12,7 +12,7 @@
 
 <div class="form-control">
     <label for="">Week</label>
-    <input type="number"   formControlName="week" >
+    <input type="number"    formControlName="week" readonly>
 </div>
 
 <div class="form-control">
@@ -26,8 +26,8 @@
 </div>
 
 <div class="form-control">
-    <label for="">Score</label>
-    <input type="number"  formControlName="week" >
+    <label for="">Task Pdf</label>
+    <input type="file"  (change)="onFileSelected($event)" >
 </div>
 
 <div class="form-control "  style="display: flex; flex-wrap: wrap;">
@@ -49,5 +49,5 @@
 </div>
 
 <div class="pop-footer">
-    <button  mat-raised-button  color="primary" > submit </button>
+    <button  mat-raised-button  color="primary" (click)="saveTask()"  > submit </button>
 </div>
