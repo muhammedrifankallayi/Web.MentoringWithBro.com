@@ -39,32 +39,23 @@
             </tr>
         </thead>
         <tbody>
-            <tr  class="week-list" >
-                <td class="std-name" (click)="openWeekDetails()" >Mariyath</td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
-                <td> <mat-checkbox></mat-checkbox> </td>
+            <tr  class="week-list"  *ngFor="let item of searchList;let i = index" >
+                <td class="std-name" (click)="getStudentTaskPerfList(item._id)" >{{item.name}}  </td>
+                <ng-container *ngFor="let item of totalWeekList; let i = index">
+                    <td>
+                      <ng-container *ngIf="item?.current_week > i; else unchecked">
+                        <mat-checkbox checked disabled></mat-checkbox>
+                      </ng-container>
+                      <ng-template #unchecked>
+                        <mat-checkbox disabled></mat-checkbox>
+                      </ng-template>
+                    </td>
+                  </ng-container>
+                  
+               
+               
+                <!-- <td> <mat-checkbox></mat-checkbox> </td> -->
+                
                 
             </tr>
         </tbody>

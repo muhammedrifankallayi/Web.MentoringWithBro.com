@@ -8,25 +8,42 @@
     </span>
 </div>
 
-<div class="pop-content">
+<div class="pop-content"  [formGroup]="itemForm" >
 
 <div class="form-control">
     <label for="">Week</label>
-    <input type="text">
+    <input type="number"   formControlName="week" >
+</div>
+
+<div class="form-control">
+    <label for="">Task</label>
+    <input type="text"  formControlName="taskName" >
 </div>
 
 <div class="form-control">
     <label for="">Remarks</label>
-   <textarea name="" id=""  rows="2" ></textarea>
+   <textarea name="" id=""  rows="2"  formControlName="remarks"  ></textarea>
 </div>
 
 <div class="form-control">
-    <label for="">Point</label>
-    <input type="number">
+    <label for="">Score</label>
+    <input type="number"  formControlName="week" >
+</div>
+
+<div class="form-control "  style="display: flex; flex-wrap: wrap;">
+    <div class="form-control child">
+        <label for="">date from</label>
+        <input type="date"  formControlName="date_from"  [ngModel]="itemForm.controls['date_from'].value | date:'yyyy-MM-dd'" >
+    </div>
+    
+    <div class="form-control child">
+        <label for="">date to</label>
+        <input type="date"  formControlName="date_to"  [ngModel]="itemForm.controls['date_to'].value | date:'yyyy-MM-dd'" >
+    </div>
 </div>
 
 <div style="padding: 4px;">
-  <mat-checkbox>completed</mat-checkbox>
+  <mat-checkbox   formControlName="isCompleted" >completed</mat-checkbox>
 </div>
 
 </div>
