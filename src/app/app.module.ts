@@ -28,6 +28,7 @@ import { StudentWeeksComponent } from './pages/student-weeks/student-weeks.compo
 import { LoginComponent } from './pages/login/login.component';
 import { InterceptorInterceptor } from './pages/services/interceptor.service';
 import { BatchListComponent } from './pages/batch-list/batch-list.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -63,6 +64,9 @@ import { BatchListComponent } from './pages/batch-list/batch-list.component';
     MeterialsModule,
     PopupsModule,
     HttpClientModule,
+    MatButtonModule,
+
+
     
 
 

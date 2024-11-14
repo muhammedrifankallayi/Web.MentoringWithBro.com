@@ -1,11 +1,44 @@
-<app-header></app-header>
-<app-sidebar (onToggleSideNav)="onToggleSideNav($event)">
-</app-sidebar>
-<app-body
-    [collapsed]="isSideNavCollapsed"
-    [screenWidth]="screenWidth"
->
-</app-body>
-<!-- <app-footer></app-footer> -->
-
-
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+      <div class="sidenav-inner">
+        <!-- Static Menu -->
+        <div class="menu-item">
+          <mat-icon>home</mat-icon>
+          About
+        </div>
+  
+        <!-- Dropdown Menu for Users -->
+        <div class="menu-item" (click)="toggleDropdown('usersDropdown')">
+          <mat-icon>people</mat-icon>
+          Users
+          <mat-icon class="dropdown-icon">
+            {{ usersDropdown ? 'expand_less' : 'expand_more' }}
+          </mat-icon>
+        </div>
+        <div class="dropdown-menu" *ngIf="usersDropdown">
+          <div class="dropdown-item">Admin</div>
+          <div class="dropdown-item">Customer</div>
+          <div class="dropdown-item">Guests</div>
+        </div>
+  
+        <!-- Dropdown Menu for Configuration -->
+        <div class="menu-item" (click)="toggleDropdown('configDropdown')">
+          <mat-icon>settings</mat-icon>
+          Configuration
+          <mat-icon class="dropdown-icon">
+            {{ configDropdown ? 'expand_less' : 'expand_more' }}
+          </mat-icon>
+        </div>
+        <div class="dropdown-menu" *ngIf="configDropdown">
+          <div class="dropdown-item">General</div>
+          <div class="dropdown-item">Advanced</div>
+        </div>
+      </div>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <button mat-button (click)="sidenav.toggle()">Toggle Sidebar</button>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
