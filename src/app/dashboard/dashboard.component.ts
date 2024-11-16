@@ -1,46 +1,36 @@
-import { trigger, state, style, transition, animate } from '@angular/animations';
+
 import { Component, OnInit ,} from '@angular/core';
-import { Router } from '@angular/router';
 
+import  {navbarData}  from './sidebar/nav-data'
 
-interface SideNavToggle {
-  screenWidth: number;
-  collapsed: boolean;
-}
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'], 
 })
-export class DashboardComponent {
+export class DashboardComponent  implements OnInit{
 
-  // dashoboarshow= false;
+  navItems:any[] = []
+
+ngOnInit(): void {
+  this.navItems = navbarData
+}
 
 
+currentMenu:number | null = null
 
-  // isSideNavCollapsed = false;
-  // screenWidth = 0;
+i=1
+  
+openMenu(i:number){
 
-  // onToggleSideNav(data: SideNavToggle): void {
-  //   this.screenWidth = data.screenWidth;
-  //   this.isSideNavCollapsed = data.collapsed;
-  //   this.dashoboarshow= false
-  // }
-
-  // activeDropdown: string | null = null;
-
-  // toggleDropdown(menu: string) {
-  //   this.activeDropdown = this.activeDropdown === menu ? null : menu;
-  // }
-
-  usersDropdown: boolean = false;
-  configDropdown: boolean = false;
-
-  toggleDropdown(menu: string): void {
-    if (menu === 'usersDropdown') {
-      this.usersDropdown = !this.usersDropdown;
-    } else if (menu === 'configDropdown') {
-      this.configDropdown = !this.configDropdown;
-    }
+  if(i==this.currentMenu){
+    this.currentMenu = null
+    return
   }
+
+this.currentMenu = i
+}
+
+
+
 }

@@ -1,44 +1,86 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="side" opened class="sidenav">
       <div class="sidenav-inner">
-        <!-- Static Menu -->
-        <div class="menu-item">
-          <mat-icon>home</mat-icon>
-          About
-        </div>
-  
-        <!-- Dropdown Menu for Users -->
-        <div class="menu-item" (click)="toggleDropdown('usersDropdown')">
-          <mat-icon>people</mat-icon>
-          Users
-          <mat-icon class="dropdown-icon">
-            {{ usersDropdown ? 'expand_less' : 'expand_more' }}
-          </mat-icon>
-        </div>
-        <div class="dropdown-menu" *ngIf="usersDropdown">
-          <div class="dropdown-item">Admin</div>
-          <div class="dropdown-item">Customer</div>
-          <div class="dropdown-item">Guests</div>
-        </div>
-  
-        <!-- Dropdown Menu for Configuration -->
-        <div class="menu-item" (click)="toggleDropdown('configDropdown')">
-          <mat-icon>settings</mat-icon>
-          Configuration
-          <mat-icon class="dropdown-icon">
-            {{ configDropdown ? 'expand_less' : 'expand_more' }}
-          </mat-icon>
-        </div>
-        <div class="dropdown-menu" *ngIf="configDropdown">
-          <div class="dropdown-item">General</div>
-          <div class="dropdown-item">Advanced</div>
-        </div>
+
+<div class="top-logo" >
+ <span>Your Mentor Bro</span>
+</div>
+
+  <ul >
+
+    <ng-container  *ngFor="let item of navItems;let i = index" >
+        <li  *ngIf="item.children.length==0; else ElseBlock"  [routerLink]="[item.routeLink]" >
+            <span class="item-menu" >
+              <span class="icon-span"  > <mat-icon>{{item.icon}}</mat-icon></span>  {{item.label}}
+            </span>
+        </li>
+
+        <ng-template #ElseBlock  > 
+            <li class="dropdown-li">
+                <div class="item-menu-main"  (click)="openMenu(i)" >
+                  <span  class="child-span" ><mat-icon style="width: 40px;" >{{item.icon}}</mat-icon> {{item.label}}</span>
+                  <mat-icon
+                    class="menu-icon"
+                   
+                    [ngClass]="{ 'menu-icon-rotate': i == currentMenu }"
+                  >
+                    keyboard_arrow_left
+                  </mat-icon>
+                </div>
+              
+                <ul style="background-color: #4a5cbd;color: white !important;padding-left: 30px;"
+                  class="sub-menu"
+                  [ngClass]="{ 'opened-drowpdown': i == currentMenu, 'closed-dropdown': i != currentMenu }"
+                >
+                  <span class="item-menu child-span"  *ngFor="let child of item.children" [routerLink]="[child.routeLink]"  ><mat-icon style="color: white !important;" > {{child.icon}} </mat-icon> {{child.label}} </span>
+            
+                </ul>
+              </li>
+        </ng-template>
+        
+    </ng-container>
+
+  </ul>
       </div>
     </mat-sidenav>
   
     <mat-sidenav-content>
-      <button mat-button (click)="sidenav.toggle()">Toggle Sidebar</button>
-      <router-outlet></router-outlet>
+        <mat-toolbar color="primary" class="navbar">
+            <span class="navbar-title"> 
+                <button mat-mini-fab color="primary" (click)="sidenav.toggle()" aria-label="Example icon button with a menu icon">
+                <mat-icon>menu</mat-icon>
+              </button>
+            </span>
+          
+            <!-- Spacer to push content to the right -->
+            <span class="spacer"></span>
+          
+            <!-- User Avatar -->
+            <img
+              src="https://via.placeholder.com/40"
+              alt="User Avatar"
+              class="user-avatar"
+              [matMenuTriggerFor]="userMenu"
+            />
+          
+            <!-- Mat Menu -->
+            <mat-menu #userMenu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>account_circle</mat-icon>
+                Profile
+              </button>
+              <button mat-menu-item>
+                <mat-icon>settings</mat-icon>
+                Settings
+              </button>
+              <button mat-menu-item>
+                <mat-icon>logout</mat-icon>
+                Logout
+              </button>
+            </mat-menu>
+          </mat-toolbar>
+    
+     <app-body></app-body>
     </mat-sidenav-content>
   </mat-sidenav-container>
   

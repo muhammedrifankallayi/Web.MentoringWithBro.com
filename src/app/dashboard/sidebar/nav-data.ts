@@ -6,41 +6,69 @@ export const navbarData = [
   // },
   {
     routeLink: 'user-list',
-    icon: 'fa fa-pie-chart',
-    label: 'Users'
+    icon: 'add',
+    label: 'Users',
+    children:[]
   },
   {
     routeLink: 'student-list',
-    icon: 'fa fa-list-ul',
-    label: 'Students'
+    icon: 'add',
+    label: 'Students',
+    children:[
+      {
+        routeLink: 'student-list',
+    icon: 'delete',
+    label: 'item 1',
+      },
+      {
+        routeLink: 'student-list',
+    icon: 'highlight',
+    label: 'item 2',
+      }
+    ]
   },
   {
 
     routeLink: 'faculty',
-    icon: ' fa fa-history',
-    label: 'Faculty'
+    icon: 'add',
+    label: 'Faculty',
+    children:[
+      {
+        routeLink: 'student-list',
+    icon: 'fa fa-list-ul',
+    label: 'item 1',
+      },
+      {
+        routeLink: 'student-list',
+    icon: 'fa fa-list-ul',
+    label: 'item 2',
+      }
+    ]
   },
 
   {
 
     routeLink: 'courses',
-    icon: ' fa fa-users',
-    label: 'Courses'
+    icon: 'add',
+    label: 'Courses',
+    children:[]
   },
 
 
   {
 
     routeLink: 'student-week',
-    icon: ' fa fa-star',
-    label: 'Student Week'
+    icon: 'edit',
+    label: 'Student Week',
+    children:[]
   },
 
   {
 
     routeLink: 'batch-list',
-    icon: ' fa fa-star',
-    label: 'Batch List'
+    icon: 'insert_comment',
+    label: 'Batch List',
+    children:[]
   },
 
 ];
