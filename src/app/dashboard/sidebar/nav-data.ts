@@ -1,4 +1,4 @@
-export const navbarData = [
+export const navbarData:Route[] = [
   // {
   //     routeLink: 'dashboard',
   //     icon: 'fal fa-home',
@@ -14,36 +14,14 @@ export const navbarData = [
     routeLink: 'student-list',
     icon: 'add',
     label: 'Students',
-    children:[
-      {
-        routeLink: 'student-list',
-    icon: 'delete',
-    label: 'item 1',
-      },
-      {
-        routeLink: 'student-list',
-    icon: 'highlight',
-    label: 'item 2',
-      }
-    ]
+    children:[]
   },
   {
 
     routeLink: 'faculty',
     icon: 'add',
     label: 'Faculty',
-    children:[
-      {
-        routeLink: 'student-list',
-    icon: 'fa fa-list-ul',
-    label: 'item 1',
-      },
-      {
-        routeLink: 'student-list',
-    icon: 'fa fa-list-ul',
-    label: 'item 2',
-      }
-    ]
+    children:[ ]
   },
 
   {
@@ -72,3 +50,18 @@ export const navbarData = [
   },
 
 ];
+
+
+
+interface ChildRoute {
+  routeLink: string;
+  icon: string;
+  label: string;
+}
+
+interface Route {
+  routeLink: string;
+  icon: string;
+  label: string;
+  children?: ChildRoute[];
+}

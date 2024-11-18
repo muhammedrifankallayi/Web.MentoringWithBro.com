@@ -9,7 +9,7 @@
   <ul >
 
     <ng-container  *ngFor="let item of navItems;let i = index" >
-        <li  *ngIf="item.children.length==0; else ElseBlock"  [routerLink]="[item.routeLink]" >
+        <li  *ngIf="item.children.length==0; else ElseBlock"  [routerLink]="[item.routeLink]"    routerLinkActive="active" >
             <span class="item-menu" >
               <span class="icon-span"  > <mat-icon>{{item.icon}}</mat-icon></span>  {{item.label}}
             </span>

@@ -9,6 +9,7 @@ import { StudentWeeksComponent } from './pages/student-weeks/student-weeks.compo
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BatchListComponent } from './pages/batch-list/batch-list.component';
+import { TaskAssignCourseComponent } from './pages/task-assign-course/task-assign-course.component';
 
 const routes: Routes = [
 
@@ -20,7 +21,11 @@ const routes: Routes = [
     { path:"courses",component:CoursesComponent},
     { path:"faculty",component:FacultyComponent},
     { path:"student-week",component:StudentWeeksComponent},
-    { path:"batch-list",component:BatchListComponent}
+    { path:"batch-list",component:BatchListComponent},
+    {
+      path:"task-add-for-course",
+      component:TaskAssignCourseComponent
+    }
   ]
 },
 

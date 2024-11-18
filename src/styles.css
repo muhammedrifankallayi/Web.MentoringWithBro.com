@@ -177,3 +177,7 @@ tbody {
 
 
   /* Exclude specific elements */
+.pop-footer{
+    display: flex;
+    column-gap: 4px;
+}

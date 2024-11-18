@@ -1,0 +1,52 @@
+
+<div class="pop-header" >
+    <span class="title"  >
+        Task Add
+    </span>
+    <span class="close-icon">
+        <mat-icon  (click)="dialogRef.close()" >close</mat-icon>
+    </span>
+</div>
+
+<div class="pop-content"  [formGroup]="itemForm" >
+
+
+<div  class="form-control" >
+<label for="">week</label>
+<input type="text"  formControlName="week"  readonly>
+</div>
+
+
+<div  class="form-control" >
+<label for="">Task Name</label>
+<input type="text" formControlName="task_name">
+</div>
+
+<div  class="form-control" >
+    <label for="">Course</label>
+    <select formControlName="course_id"  (change)="GetWeek($event)" >
+        <option  *ngFor="let item of courseList"   [value]="item._id"> {{item.course}} </option>
+    </select>
+    </div>
+
+
+
+    <div  class="form-control" >
+        <label for="">Salary</label>
+      <input type="file" formControlName="task_file_path">
+        </div>
+
+        <div  class="form-control" >
+         <mat-checkbox formControlName="active" > 
+            Active
+         </mat-checkbox>
+            </div>
+
+
+</div>
+
+<div class="pop-footer">
+    <button  mat-raised-button color="primary" (click)="submit()"  >Save</button>
+    <button  mat-raised-button color="warn" (click)="dialogRef.close()"  >Close</button>
+</div>
+
