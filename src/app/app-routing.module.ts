@@ -10,10 +10,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BatchListComponent } from './pages/batch-list/batch-list.component';
 import { TaskAssignCourseComponent } from './pages/task-assign-course/task-assign-course.component';
+import { AdminGuard } from './shared/guard/admin.guard';
 
 const routes: Routes = [
 
-{path:"",component:DashboardComponent,
+{
+  path:"",component:DashboardComponent,
+ 
   children:[
     { path: 'chart', component: ChartpageComponent },
     { path: 'user-list', component: UserListComponent },
@@ -26,7 +29,8 @@ const routes: Routes = [
       path:"task-add-for-course",
       component:TaskAssignCourseComponent
     }
-  ]
+  ],
+  canActivate:[AdminGuard]
 },
 
   
