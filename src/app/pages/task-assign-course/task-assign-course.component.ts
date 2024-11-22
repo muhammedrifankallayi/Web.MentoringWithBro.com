@@ -15,13 +15,17 @@ export class TaskAssignCourseComponent {
   searchList:any[] = [];
   resultList:any[] = [];
   date_format = Config.dateformat
+  courseList: any[]=[];
+  course:string = ''
 constructor(
 private dialog:MatDialog,
 private dbservice:DbService
 ){}
 
 ngOnInit(): void {
+  this.getAllCourseList()
   this.GetAllTaskCourse();  
+  
 }
 
 
@@ -43,6 +47,13 @@ openAddTaskForCourse(list:any,tp=0){
   })
 }
 
+
+getAllCourseList(){
+  this.dbservice.methodGet("/getAllCourseList").subscribe((res:any)=>{
+    this.courseList = res.data
+    this.course = this.courseList[0]._id
+  })
+  }
 
 GetAllTaskCourse(){
   this.dbservice.methodGet("/getCourseWiseTask").subscribe((data:any)=>{

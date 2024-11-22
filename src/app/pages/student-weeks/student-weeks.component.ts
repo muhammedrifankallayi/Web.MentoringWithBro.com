@@ -24,7 +24,6 @@ totalWeekList = new Array(24)
 
   ngOnInit(): void {
     this.getAllStudentList()
-    console.log(this.totalWeekList.length,"PP");
     
   }
 
@@ -40,9 +39,9 @@ this.dialog.open(
 
 
 
-getStudentTaskPerfList(userId:any){
+getStudentTaskPerfList(item:any){
 
-this.dbservice.methodGet("/getTaskPerformanceListByUser?id="+userId)
+this.dbservice.methodGet("/getTaskPerformanceListByUser?id="+item._id)
 .subscribe((res:any)=>{
   if(res.success&&res.data.length>0){
    this.openWeekDetails(res.data);
@@ -51,7 +50,8 @@ this.dbservice.methodGet("/getTaskPerformanceListByUser?id="+userId)
       disableClose:true,
       width:"400px",
       data:{
-        userId
+        userId:item._id,
+        courseId:item.courseId
       }
     })
   }

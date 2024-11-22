@@ -12,8 +12,9 @@ import { DbService } from 'src/app/db.service';
 export class AddWeekDetailPopupComponent implements OnInit {
 
 itemForm!:FormGroup;
-selectedFile: File | null = null;
-
+courseList:any[] = []
+taskList:any[] = []
+currTaskToAssign = ""
 constructor(
   public dialogRef:MatDialogRef<AddWeekDetailPopupComponent>,
   private fb:FormBuilder,
@@ -26,18 +27,23 @@ constructor(
 ngOnInit(): void {
   this.buildForm()
   this.getNextweek()
+  this.getAllCourses()
+  this.gettaskLists(this.data.courseId)
 }
 
 buildForm(){
  this.itemForm = this.fb.group({
   week:[0],
-  taskName:[""],
   remarks:[""],
   date_from:[new Date()],
   date_to:[new Date().setDate(new Date().getDate()+6)],
+  courseId:[""], 
+  taskId:[""],
   isCompleted:[false],
   studentId:[this.data.userId,Validators.required]
  })
+ this.itemForm.get("courseId")?.disable()
+ this.itemForm.get("taskId")?.disable()
 }
 
 getNextweek(){
@@ -46,14 +52,30 @@ this.dbservice.methodGet("/getNextWeekByStudent?id="+this.data.userId).subscribe
 })
 }
 
-
-onFileSelected(event: Event): void {
-  const input = event.target as HTMLInputElement;
-  if (input.files && input.files[0]) {
-    this.selectedFile = input.files[0];
-  }
+getAllCourses(){
+  this.dbservice.methodGet("/getAllCourseList").subscribe((data:any)=>{
+       this.courseList = data.data
+  })
 }
 
+
+gettaskLists(id:string){
+
+this.dbservice.methodGet("/getCourseWiseTask?course_id="+id)
+.subscribe((data:any)=>{
+this.taskList = data.data
+
+
+this.taskList.forEach((x:any)=>{
+  if(x.week==this.itemForm.get("week")?.value){
+    this.currTaskToAssign = x._id
+    this.itemForm.get("taskId")?.setValue(x._id);
+    this.itemForm.get("courseId")?.setValue(id);
+  }
+})
+})
+
+}
 
 
 //submitt
@@ -64,16 +86,10 @@ saveTask(){
     return
   }
 
-  if (!this.selectedFile) {
-    alert('Please select a PDF file.');
-    return;
-  }
 
-  const formData = new FormData();
-  formData.append('file', this.selectedFile);
-  formData.append('data', JSON.stringify(this.itemForm.value));
 
-  this.dbservice.methodPost("/saveTask",formData).subscribe((res:any)=>{
+
+  this.dbservice.methodPost("/saveTask",this.itemForm.getRawValue()).subscribe((res:any)=>{
     if(res.success){
      this.snack.open("Saved Successfull","OK",{duration:3000});
     }else{

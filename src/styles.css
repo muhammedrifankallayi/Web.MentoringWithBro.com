@@ -162,6 +162,9 @@ tbody {
     border-radius: 4px;
     padding: 4px;
 }
+.form-control{
+    border: none;
+}
 
 .edit{
     color: blue;
@@ -181,3 +184,17 @@ tbody {
     display: flex;
     column-gap: 4px;
 }
+
+.top-content{
+    border-bottom: 1px solid #cccc;
+    padding: 3px;
+    margin-bottom: 4px;
+   
+}
+.card-main{
+    padding: 5px;
+    
+}
+/* *:not(mat-icon,i) {
+    font-family: sans-serif !important;
+} */

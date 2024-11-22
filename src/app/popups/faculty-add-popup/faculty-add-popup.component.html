@@ -19,7 +19,10 @@
 
 <div  class="form-control" >
 <label for="">Domain</label>
-<input type="text" formControlName="domain">
+
+<select name="" id="" formControlName="domain" >
+    <option *ngFor="let item of courseList" [value]="item._id"> {{item.course}} </option>
+</select>
 </div>
 
 <div  class="form-control" >

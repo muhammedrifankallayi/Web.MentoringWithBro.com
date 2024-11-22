@@ -6,7 +6,7 @@
  <span>Your Mentor Bro</span>
 </div>
 
-  <ul >
+  <ul  style="background-color: #e3eff776; padding-left: 10px;" >
 
     <ng-container  *ngFor="let item of navItems;let i = index" >
         <li  *ngIf="item.children.length==0; else ElseBlock"  [routerLink]="[item.routeLink]"    routerLinkActive="active" >
@@ -56,12 +56,10 @@
             <span class="spacer"></span>
           
             <!-- User Avatar -->
-            <img
-              src="https://via.placeholder.com/40"
-              alt="User Avatar"
-              class="user-avatar"
-              [matMenuTriggerFor]="userMenu"
-            />
+         
+            <mat-icon   [matMenuTriggerFor]="userMenu"  style="cursor: pointer;">
+              more_vert
+            </mat-icon>
           
             <!-- Mat Menu -->
             <mat-menu #userMenu="matMenu">

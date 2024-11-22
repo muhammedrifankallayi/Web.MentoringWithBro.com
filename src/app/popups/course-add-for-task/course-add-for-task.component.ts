@@ -46,7 +46,7 @@ export class CourseAddForTaskComponent implements OnInit {
 
 
   fileChange(event:any){
-
+this.snack.open("slected")
    this.file = event.target.files[0]
 
   }
@@ -82,7 +82,7 @@ if(course_id){
       const formData = new FormData()
 
       formData.append('file',this.file)
-      formData.append('data',this.itemForm.value);
+      formData.append('data',JSON.stringify(this.itemForm.value));
 
      this.dbservice.methodPost("/saveCourseTask",formData).subscribe((res:any)=>{
       if(res.success){

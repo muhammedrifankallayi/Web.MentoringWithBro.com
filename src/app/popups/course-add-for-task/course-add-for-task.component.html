@@ -32,8 +32,8 @@
 
 
     <div  class="form-control" >
-        <label for="">Salary</label>
-      <input type="file" formControlName="task_file_path">
+        <label for="">Task PDF</label>
+      <input type="file" formControlName="task_file_path"  (change)="fileChange($event)" >
         </div>
 
         <div  class="form-control" >

@@ -40,7 +40,7 @@
         </thead>
         <tbody>
             <tr  class="week-list"  *ngFor="let item of searchList;let i = index" >
-                <td class="std-name" (click)="getStudentTaskPerfList(item._id)" >{{item.name}}  </td>
+                <td class="std-name" (click)="getStudentTaskPerfList(item)" >{{item.name}}  </td>
                 <ng-container *ngFor="let items of totalWeekList; let i = index">
                     <td>
                       <ng-container *ngIf="item?.current_week > i; else unchecked">

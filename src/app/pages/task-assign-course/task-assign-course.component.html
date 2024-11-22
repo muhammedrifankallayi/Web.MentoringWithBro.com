@@ -4,10 +4,20 @@
         <h2>Task List</h2>
      <button mat-raised-button color="primary"  (click)="openAddTaskForCourse(null,0)" >Add Task </button>
     </div>
+    <div class="filter-box" >
+        
+      <div  class="form-control" >
+         <label for=""> Course </label>
+         <select  >
+            <option   *ngFor="let item of courseList" [value]="item._id"  >{{item.course}}</option>
+         </select>
+      </div>
+
+    </div>
     <table class="custom-table table">
         <thead>
             <tr>
-                <th></th>
+                <th>#</th>
                 <th>Week</th>
                 <th>Task Name</th>
                 <th>Course</th>
@@ -21,7 +31,7 @@
                 <td class="center" > {{i+1}} </td>
                 <td> {{lst?.week}} </td>
                 <td> {{lst?.task_name}} </td>
-                <td> {{lst?.course_id}} </td>
+                <td> {{lst?.Course[0].course}} </td>
                 <td> {{lst?.active}}</td>
                 <td class="al-center" >
                    <div>

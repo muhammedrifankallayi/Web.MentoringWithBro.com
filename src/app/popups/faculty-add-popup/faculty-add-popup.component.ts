@@ -12,7 +12,7 @@ export class FacultyAddPopupComponent {
 
 
 itemForm!:FormGroup
-
+courseList:any[] = []
 
 constructor(
   public dialogRef:MatDialogRef<FacultyAddPopupComponent>,
@@ -20,6 +20,7 @@ constructor(
   private dbservice:DbService
 ){
   this.buildForm()
+  this.getAllCourses()
 }
 
 buildForm(){
@@ -34,6 +35,12 @@ this.itemForm = this.fb.group({
 })
 }
 
+
+getAllCourses(){
+  this.dbservice.methodGet("/getAllCourseList").subscribe((data:any)=>{
+       this.courseList = data.data
+  })
+}
 
 
 submit(){

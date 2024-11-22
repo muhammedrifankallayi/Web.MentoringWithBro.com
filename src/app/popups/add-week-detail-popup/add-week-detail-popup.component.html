@@ -1,6 +1,6 @@
 <div class="pop-header" >
     <span>
-       Add  Week Details
+       Add  Task To Student
     </span>
 
     <span class="close-icon" >
@@ -17,7 +17,10 @@
 
 <div class="form-control">
     <label for="">Task</label>
-    <input type="text"  formControlName="taskName" >
+    <!-- <input type="text"  formControlName="taskName" > -->
+    <select name="" id=""  formControlName="courseId" >
+        <option *ngFor="let item of courseList" [value]="item._id"> {{item.course}} </option>
+    </select>
 </div>
 
 <div class="form-control">
@@ -27,7 +30,9 @@
 
 <div class="form-control">
     <label for="">Task Pdf</label>
-    <input type="file"  (change)="onFileSelected($event)" >
+  <select name="" id=""  formControlName="taskId"  >
+    <option  *ngFor="let item of taskList"   [value]="item._id" > {{item.task_name}} - week  {{item.week}} </option>
+  </select>
 </div>
 
 <div class="form-control "  style="display: flex; flex-wrap: wrap;">

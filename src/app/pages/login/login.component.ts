@@ -42,7 +42,7 @@ if(this.itemForm.invalid){
 
 console.log(this.itemForm.value);
 
-  this.dbservice.methodPost("login",this.itemForm.value).subscribe((res:any)=>{
+  this.dbservice.methodPost("/login",this.itemForm.value).subscribe((res:any)=>{
    if(res.success==true){
  
     this.snack.open("Welcome back!","close",{duration:3000})

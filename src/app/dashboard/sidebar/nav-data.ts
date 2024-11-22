@@ -5,21 +5,28 @@ export const navbarData:Route[] = [
   //     label: 'Dashboard'
   // },
   {
+    routeLink: 'dashboard',
+    icon: 'equalizer',
+    label: 'Dashboard',
+    children:[]
+  },
+
+  {
     routeLink: 'user-list',
-    icon: 'add',
+    icon: 'group',
     label: 'Users',
     children:[]
   },
   {
     routeLink: 'student-list',
-    icon: 'add',
+    icon: 'person',
     label: 'Students',
     children:[]
   },
   {
 
     routeLink: 'faculty',
-    icon: 'add',
+    icon: 'streetview',
     label: 'Faculty',
     children:[ ]
   },
@@ -27,7 +34,7 @@ export const navbarData:Route[] = [
   {
 
     routeLink: 'courses',
-    icon: 'add',
+    icon: 'school',
     label: 'Courses',
     children:[]
   },
@@ -36,7 +43,7 @@ export const navbarData:Route[] = [
   {
 
     routeLink: 'student-week',
-    icon: 'edit',
+    icon: 'menu',
     label: 'Student Week',
     children:[]
   },
@@ -44,8 +51,45 @@ export const navbarData:Route[] = [
   {
 
     routeLink: 'batch-list',
-    icon: 'insert_comment',
+    icon: 'layers',
     label: 'Batch List',
+    children:[]
+  },
+  {
+
+    routeLink: 'task-add-for-course',
+    icon: 'layers',
+    label: 'Course Task Add',
+    children:[]
+  },
+
+  {
+
+    routeLink: 'student-join-out-report',
+    icon: 'assessment',
+    label: 'Monthly Student Report',
+    children:[]
+  },
+
+  {
+
+    routeLink: 'sales-report',
+    icon: 'report',
+    label: 'Sales Report',
+    children:[]
+  },
+  {
+
+    routeLink: 'course-post',
+    icon: 'article',
+    label: 'Course To Post',
+    children:[]
+  },
+  {
+
+    routeLink: 'configuration',
+    icon: 'settings',
+    label: 'Application Configuration',
     children:[]
   },
 
